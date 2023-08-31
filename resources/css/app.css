@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .input-field {
+        @apply relative mb-10 rounded-lg ring-1 ring-red-200 p-1;
+    }
+
+    .input-field label {
+        @apply absolute top-1/2 -translate-y-1/2 left-5 transition-all;
+    }
+
+    .input-field:has(input:focus) {
+        @apply ring-4 ring-red-300;
+    }
+
+    .input-field:has(input:focus) label, .input-field:has(input:not(:placeholder-shown)) label {
+        @apply top-0 bg-white px-1 text-xs left-3;
+    }
+ }
